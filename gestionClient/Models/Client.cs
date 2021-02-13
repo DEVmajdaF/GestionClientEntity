@@ -19,7 +19,6 @@ namespace gestionClient.Models
         public string Adress { get; set; }
         //Change The Datatype from datetime2 to date of the culumn of the table (view )
         [DataType(DataType.Date)]
-        [Required(ErrorMessage ="The Data Must Be a Number")]
         public DateTime Date { get; set; }
 
     }

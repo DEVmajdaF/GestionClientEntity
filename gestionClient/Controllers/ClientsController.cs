@@ -19,10 +19,23 @@ namespace gestionClient.Controllers
             _context = context;
         }
 
+
+
+      
         // GET: Clients
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(String SearchString)
         {
-            return View(await _context.Client.ToListAsync());
+
+           
+            var clt = from s in _context.Client select s;
+
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                clt = clt.Where(s 
+                    => s.FullName.Contains(SearchString));
+            }
+            //ViewData["Client"] = clients;
+            return View(clt);
         }
 
         // GET: Clients/Details/5

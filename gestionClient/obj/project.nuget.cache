@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/yj6Yd6aoKncvdqiAWq0IfpS/Qbo8nNONxZKnCVvKCa4q81x2WoPRO4ku6BaCXOZTuoTrI0Sh9CLUVxKC5Cu5A==",
+  "dgSpecHash": "yTefpwWv9cR+5YF4bDfum2VQYRXY+rfMfsT7sc2dL7YSQFr+lO00vqd/70lSTGfjoxd8oAmWedwLqXWh+Nl33A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\youcode\\Desktop\\asp.net core project\\gestionClient\\gestionClient\\gestionClient.csproj",
+  "projectFilePath": "C:\\Users\\youcode\\Desktop\\gestionClient\\gestionClient\\gestionClient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\youcode\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\youcode\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
