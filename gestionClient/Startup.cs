@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Configuration;
 using Microsoft.Extensions.Configuration;
+using gestionClient.Areas.Identity.Data;
 
 namespace gestionClient
 {
@@ -27,12 +28,16 @@ namespace gestionClient
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddRazorPages();
 
             
-            services.AddDbContext<gestionClientContext>(options =>
+            services.AddDbContext<gestionClientDbContext>(options =>
                     options.UseSqlServer(configuration.GetConnectionString("MyClientDb"))
                 
                 );
+
+            services.AddDefaultIdentity<gestionClientUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<gestionClientDbContext>();
 
 
         }
@@ -47,13 +52,16 @@ namespace gestionClient
 
             app.UseStaticFiles();
             app.UseRouting();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     "defaultRoute",
-                    "{controller=Clients}/{action=Index}/{id?}"
+                    "{controller=Home}/{action=Index}/{id?}"
                     );
+                endpoints.MapRazorPages();
             });
         }
     }
